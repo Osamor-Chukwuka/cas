@@ -10,6 +10,43 @@
 
         </figure>
     </div>
+
+    <div class="card px-5 py-3 mt-5 shadow">
+        <div class="nav nav-fill my-3">
+            <label class="nav-link shadow-sm step0 border ml-2" onclick="commend()"><a id="commend" href="#">
+                    Commend</a></label>
+            <label class="nav-link shadow-sm step1   border ml-2 "><a onclick="complain()" id="complain"
+                    href="#">Complain</a></label>
+            <label class="nav-link shadow-sm step2   border ml-2 "><a onclick="deliver()" id="delivered"
+                    href="#">Delivered</a></label>
+        </div>
+
+        <h1 id="commend_body">Commend the caf</h1>
+        <h1 id="complain_body" style="display: none">complain the caf</h1>
+        <h1 id="deliver_body" style="display: none">deliver the caf</h1>
+    </div>
+
+
+    <script>
+
+        function commend() {
+            const commend = document.getElementById('commend_body').style.display = 'block';
+            const complain = document.getElementById('complain_body').style.display = "none";
+            const deliver = document.getElementById('deliver_body').style.display = "none";
+        }
+
+        function complain(){
+            const commend = document.getElementById('commend_body').style.display = 'none';
+            const complain = document.getElementById('complain_body').style.display = "block";
+            const deliver = document.getElementById('deliver_body').style.display = "none";
+        }
+
+        function deliver(){
+            const commend = document.getElementById('commend_body').style.display = 'none';
+            const complain = document.getElementById('complain_body').style.display = "none";
+            const deliver = document.getElementById('deliver_body').style.display = "block";
+        }
+    </script>
 @endsection
 
 
