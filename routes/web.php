@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CafetariaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,14 +22,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// routes to handle each cafetaria main page
+Route::get('cafetarias/one', [CafetariaController::class, 'index']);
