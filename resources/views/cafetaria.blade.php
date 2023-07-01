@@ -18,18 +18,161 @@
                     Commend</a></label>
             <label class="nav-link shadow-sm step1   border ml-2 "><a onclick="complain()" id="complain"
                     href="#">Complain</a></label>
-            <label class="nav-link shadow-sm step2   border ml-2 "><a onclick="deliver()" id="delivered"
-                    href="#">Delivered</a></label>
+            {{-- <label class="nav-link shadow-sm step2   border ml-2 "><a onclick="deliver()" id="delivered"
+                    href="#">Delivered</a></label> --}}
         </div>
 
-        <h1 id="commend_body">Commend the caf</h1>
-        <h1 id="complain_body" style="display: none">complain the caf</h1>
-        <h1 id="deliver_body" style="display: none">deliver the caf</h1>
+
+        {{-- THE CHAT FOR COMMENDING --}}
+        <div id="commend_body">
+            <div class="accordion mt-5" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button border border-warning text-black fs-5 fw-bolder" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseComment" aria-expanded="true"
+                            aria-controls="collapseComment">
+                            Commend This Cafetaria
+                        </button>
+                    </h2>
+                    <div id="collapseComment" class="accordion-collapse collapse show" aria-labelledby="headingComment"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body border border-warning">
+                            <div class="">
+                                <div class="overflow-y-auto">
+                                    <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info"
+                                        class="user_name">
+                                        <img src="https://media.istockphoto.com/id/1169414361/photo/regional-african-food.jpg?s=612x612&w=0&k=20&c=ulfKENptsq0Fv0iA0OVPs37ZlLT24LsBmPjVse1KBzs="
+                                            class="img-comment" alt="avatar"> <span
+                                            class="ms-2 h5 text-black bolder fw-5">chuks</span>
+                                    </a>
+                                    <div class="chat-about mb-5">
+                                        <h6 class="m-b-0 fs-5">hey
+                                        </h6>
+                                        <small class="italics bg-s"><i class="bi bi-calendar"></i>
+                                        </small>
+                                    </div>
+
+
+                                    {{-- <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info"
+                                        class="user_name">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="img-comment"
+                                            alt="avatar"> <span class="ms-2 h5 text-black bolder fw-5">User 1</span>
+                                    </a>
+                                    <div class="chat-about mb-5">
+                                        <h6 class="m-b-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            Similique dolores nulla explicabo cumque ipsam veniam eos nesciunt esse magni
+                                            totam iure autem facilis est, repellat velit reiciendis quos vero. Nulla.</h6>
+                                        <small>Last seen: 2 hours ago</small>
+                                    </div> --}}
+
+                                    <div class="chat-message clearfix">
+                                        <form action="" method="post">
+                                            @csrf
+                                            <div class="input-group mb-0">
+                                                <input type="text" name="message" class="form-control"
+                                                    placeholder="Enter text here...">
+                                                <div class="input-group-prepend">
+                                                    <button type="submit" class="border-0">
+                                                        <span class="input-group-text"><i
+                                                                class="bi bi-send-fill"></i></span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        {{-- THE CHAT FOR COMPLAINS --}}
+        <div id="complain_body" style="display: none">
+            <div class="accordion mt-5" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button border border-warning text-black fs-5 fw-bolder" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseComment" aria-expanded="true"
+                            aria-controls="collapseComment">
+                            Make Complains about this Cafetaria
+                        </button>
+                    </h2>
+                    <div id="collapseComment" class="accordion-collapse collapse show" aria-labelledby="headingComment"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body border border-warning">
+                            <div class="">
+                                <div class="overflow-y-auto">
+                                    <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info"
+                                        class="user_name">
+                                        <img src="https://media.istockphoto.com/id/1169414361/photo/regional-african-food.jpg?s=612x612&w=0&k=20&c=ulfKENptsq0Fv0iA0OVPs37ZlLT24LsBmPjVse1KBzs="
+                                            class="img-comment" alt="avatar"> <span
+                                            class="ms-2 h5 text-black bolder fw-5">chuks</span>
+                                    </a>
+                                    <div class="chat-about mb-5">
+                                        <h6 class="m-b-0 fs-5">hey
+                                        </h6>
+                                        <small class="italics bg-s"><i class="bi bi-calendar"></i>
+                                        </small>
+                                    </div>
+
+
+                                    {{-- <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info"
+                                        class="user_name">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="img-comment"
+                                            alt="avatar"> <span class="ms-2 h5 text-black bolder fw-5">User 1</span>
+                                    </a>
+                                    <div class="chat-about mb-5">
+                                        <h6 class="m-b-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            Similique dolores nulla explicabo cumque ipsam veniam eos nesciunt esse magni
+                                            totam iure autem facilis est, repellat velit reiciendis quos vero. Nulla.</h6>
+                                        <small>Last seen: 2 hours ago</small>
+                                    </div> --}}
+
+                                    <div class="chat-message clearfix">
+                                        <form action="" method="post">
+                                            @csrf
+                                            <div class="input-group mb-0">
+                                                <input type="text" name="message" class="form-control"
+                                                    placeholder="Enter text here...">
+                                                <div class="input-group-prepend">
+                                                    <button type="submit" class="border-0">
+                                                        <span class="input-group-text"><i
+                                                                class="bi bi-send-fill"></i></span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        {{-- <h1 id="deliver_body" style="display: none">deliver the caf</h1> --}}
 
 
 
     </div>
 
+
+    {{-- RATE THE CAF --}}
     <div class="mb-4">
         <figure>
             <img style="width: 100%;  height: 100vh; opacity: 1; filter: brightness(15%)"
@@ -140,5 +283,31 @@
         color: #ffffff;
         /* Adjust the text color */
         padding: 10px;
+    }
+
+    .img-comment {
+        width: 45px;
+        border-radius: 50%;
+        text-decoration: none;
+    }
+
+    .user_name {
+        text-decoration: none;
+        font-weight: bolder;
+    }
+
+    #complain, #commend{
+        text-decoration: none;
+        color: black
+        
+    }
+
+    #complain:hover, #commend:hover{
+        font-style: italic;
+        font-weight: bolder
+    }
+
+    #commend:active, #complain:active{
+        color: green;
     }
 </style>
