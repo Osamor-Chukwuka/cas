@@ -66,7 +66,7 @@
                                     </div> --}}
 
                                     <div class="chat-message clearfix">
-                                        <form action="" method="post">
+                                        <form action="{{route('post_message')}}" method="post">
                                             @csrf
                                             <div class="input-group mb-0">
                                                 <input type="text" name="message" class="form-control"

@@ -24,3 +24,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // routes to handle each cafetaria main page
 Route::get('cafetarias/one', [CafetariaController::class, 'index']);
+
+// Route to handle posting messages
+Route::post('cafetaria/post', [CafetariaController::class, 'sendMessage'])->name('post_message');
