@@ -24,7 +24,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // routes to handle each cafetaria main page
-Route::get('cafetarias/one', [CafetariaController::class, 'index']);
+Route::get('cafetarias/{id}', [CafetariaController::class, 'index']);
 
-// Route to handle posting messages
-Route::post('cafetaria/post', [CafetariaController::class, 'sendMessage'])->name('post_message');
+// Route to handle posting commend messages
+Route::post('/cafetaria/post/commend/{caf_id}', [CafetariaController::class, 'sendCommendMessage'])->name('post_message');
+
+// Route to handle posting complain messages
+Route::post('/cafetaria/post/complain/{caf_id}', [CafetariaController::class, 'sendComplainMessage'])->name('post_message');

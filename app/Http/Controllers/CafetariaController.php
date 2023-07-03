@@ -2,25 +2,46 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cafetaria;
+use App\Models\Commend;
+use App\Models\Complain;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class CafetariaController extends Controller
 {
     //
-    public function index(){
-        return view('cafetaria');
+    public function index(Request $request){
+        $caf_id =  $request->segment(2);
+        return view('cafetaria', [
+            'caf_id' => $caf_id
+        ]);
     }
 
-    // method to handle posting messages
-    public function sendMessage(Request $request){
+    // method to handle posting commend messages
+    public function sendCommendMessage(Request $request){
         $form = $request->validate([
-            'user_id' => 'required',
-            'cafetaria_id' => 'required',
             'message' => 'required',
         ]);
 
         $form['user_id'] = Auth::user()->id;
-        echo $request->message;
+        $form['cafetaria_id'] = $request->segment(4);
+        
+        Commend::create($form);
+        return back();
+    }
+
+
+    // method to handle posting complain messages
+    public function sendComplainMessage(Request $request){
+        $form = $request->validate([
+            'message' => 'required',
+        ]);
+
+        $form['user_id'] = Auth::user()->id;
+        $form['cafetaria_id'] = $request->segment(4);
+        
+        Complain::create($form);
+        return back();
     }
 }

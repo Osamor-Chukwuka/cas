@@ -66,7 +66,7 @@
                                     </div> --}}
 
                                     <div class="chat-message clearfix">
-                                        <form action="{{route('post_message')}}" method="post">
+                                        <form action="/cafetaria/post/commend/{{$caf_id}}" method="post">
                                             @csrf
                                             <div class="input-group mb-0">
                                                 <input type="text" name="message" class="form-control"
@@ -139,7 +139,7 @@
                                     </div> --}}
 
                                     <div class="chat-message clearfix">
-                                        <form action="" method="post">
+                                        <form action="/cafetaria/post/complain/{{$caf_id}}" method="post">
                                             @csrf
                                             <div class="input-group mb-0">
                                                 <input type="text" name="message" class="form-control"

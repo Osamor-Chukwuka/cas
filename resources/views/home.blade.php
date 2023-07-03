@@ -40,45 +40,53 @@
 
         </figure>
     </div>
-
+    
     <div class="container mt-5 row justify-content-between">
         <h2 class="text-center mb-4 fw-bolder" id="caf">Cafetarias</h2>
-        <div class="card col-6" style="width: 28rem;">
-            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="https://media.istockphoto.com/id/491090528/photo/cooked-rice.jpg?s=170667a&w=0&k=20&c=YkY-NcuHR870eJS1azbozRxowiUZQsbliIF9p2vX59M="
-                            class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://media.istockphoto.com/id/491090528/photo/cooked-rice.jpg?s=170667a&w=0&k=20&c=YkY-NcuHR870eJS1azbozRxowiUZQsbliIF9p2vX59M="
-                            class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://media.istockphoto.com/id/491090528/photo/cooked-rice.jpg?s=170667a&w=0&k=20&c=YkY-NcuHR870eJS1azbozRxowiUZQsbliIF9p2vX59M="
-                            class="d-block w-100" alt="...">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                    content.</p>
-                <a href="cafetarias/one" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
 
-        <div class="card col-6" style="width: 28rem;">
+        @foreach ($cafetarias as $cafetaria)
+            <div class="card col-6" style="width: 28rem;">
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://media.istockphoto.com/id/491090528/photo/cooked-rice.jpg?s=170667a&w=0&k=20&c=YkY-NcuHR870eJS1azbozRxowiUZQsbliIF9p2vX59M="
+                                class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://media.istockphoto.com/id/491090528/photo/cooked-rice.jpg?s=170667a&w=0&k=20&c=YkY-NcuHR870eJS1azbozRxowiUZQsbliIF9p2vX59M="
+                                class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://media.istockphoto.com/id/491090528/photo/cooked-rice.jpg?s=170667a&w=0&k=20&c=YkY-NcuHR870eJS1azbozRxowiUZQsbliIF9p2vX59M="
+                                class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title fw-bolder">{{ $cafetaria->name }}</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's
+                        content.</p>
+                    @php
+                    @endphp
+                    <a href="cafetarias/{{$cafetaria->id}}" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        @endforeach
+
+
+
+        {{-- <div class="card col-6" style="width: 28rem;">
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -112,7 +120,7 @@
                 <a href="cafetarias/one" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 
 

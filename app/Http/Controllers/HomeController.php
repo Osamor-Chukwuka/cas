@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cafetaria;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $current_caf = Cafetaria::select('*')->get();
+        // echo($current_caf);
+        return view('home', [
+            'cafetarias' => $current_caf
+        ]);
     }
 }
