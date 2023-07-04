@@ -6,7 +6,7 @@
             <img style="width: 100%;  height: 90vh; opacity: 0.6; filter: brightness(30%)"
                 src="https://media.istockphoto.com/id/1169414361/photo/regional-african-food.jpg?s=612x612&w=0&k=20&c=ulfKENptsq0Fv0iA0OVPs37ZlLT24LsBmPjVse1KBzs="
                 class="img-fluid bg-gradient" alt="...">
-            <figcaption class="display-2 caption fw-bold " id="caption">Davta Cafetaria</figcaption>
+            <figcaption class="display-2 caption fw-bold " id="caption">{{$caf_name[0]->name}}</figcaption>
 
         </figure>
     </div>
@@ -39,18 +39,26 @@
                         <div class="accordion-body border border-warning">
                             <div class="">
                                 <div class="overflow-y-auto">
-                                    <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info"
-                                        class="user_name">
-                                        <img src="https://media.istockphoto.com/id/1169414361/photo/regional-african-food.jpg?s=612x612&w=0&k=20&c=ulfKENptsq0Fv0iA0OVPs37ZlLT24LsBmPjVse1KBzs="
-                                            class="img-comment" alt="avatar"> <span
-                                            class="ms-2 h5 text-black bolder fw-5">chuks</span>
-                                    </a>
-                                    <div class="chat-about mb-5">
-                                        <h6 class="m-b-0 fs-5">hey
-                                        </h6>
-                                        <small class="italics bg-s"><i class="bi bi-calendar"></i>
-                                        </small>
-                                    </div>
+                                    @foreach ($commendations as $commend)
+                                        @php
+                                            $user2 = Auth::user()
+                                                ->where('id', $commend->user_id)
+                                                ->get('name');
+                                        @endphp
+                                        <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info"
+                                            class="user_name">
+                                            <img src="https://media.istockphoto.com/id/1169414361/photo/regional-african-food.jpg?s=612x612&w=0&k=20&c=ulfKENptsq0Fv0iA0OVPs37ZlLT24LsBmPjVse1KBzs="
+                                                class="img-comment" alt="avatar"> <span
+                                                class="ms-2 h5 text-black bolder fw-5">{{ $user2[0]->name }}</span>
+                                        </a>
+                                        <div class="chat-about mb-5">
+                                            <h6 class="m-b-0 fs-5">{{$commend->message}}
+                                            </h6>
+                                            <small class="italics bg-s"><i class="bi bi-calendar">{{ $commend->updated_at }}</i>
+                                            </small>
+                                        </div>
+                                    @endforeach
+
 
 
                                     {{-- <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info"
@@ -66,7 +74,7 @@
                                     </div> --}}
 
                                     <div class="chat-message clearfix">
-                                        <form action="/cafetaria/post/commend/{{$caf_id}}" method="post">
+                                        <form action="/cafetaria/post/commend/{{ $caf_id }}" method="post">
                                             @csrf
                                             <div class="input-group mb-0">
                                                 <input type="text" name="message" class="form-control"
@@ -107,23 +115,33 @@
                             Make Complains about this Cafetaria
                         </button>
                     </h2>
+
                     <div id="collapseComment" class="accordion-collapse collapse show" aria-labelledby="headingComment"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body border border-warning">
                             <div class="">
                                 <div class="overflow-y-auto">
-                                    <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info"
-                                        class="user_name">
-                                        <img src="https://media.istockphoto.com/id/1169414361/photo/regional-african-food.jpg?s=612x612&w=0&k=20&c=ulfKENptsq0Fv0iA0OVPs37ZlLT24LsBmPjVse1KBzs="
-                                            class="img-comment" alt="avatar"> <span
-                                            class="ms-2 h5 text-black bolder fw-5">chuks</span>
-                                    </a>
-                                    <div class="chat-about mb-5">
-                                        <h6 class="m-b-0 fs-5">hey
-                                        </h6>
-                                        <small class="italics bg-s"><i class="bi bi-calendar"></i>
-                                        </small>
-                                    </div>
+                                    @foreach ($complains as $complain)
+                                        @php
+                                            $user = Auth::user()
+                                                ->where('id', $complain->user_id)
+                                                ->get('name');
+                                        @endphp
+                                        <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info"
+                                            class="user_name">
+                                            <img src="https://media.istockphoto.com/id/1169414361/photo/regional-african-food.jpg?s=612x612&w=0&k=20&c=ulfKENptsq0Fv0iA0OVPs37ZlLT24LsBmPjVse1KBzs="
+                                                class="img-comment" alt="avatar"> <span
+                                                class="ms-2 h5 text-black bolder fw-5">{{ $user[0]->name }}</span>
+                                        </a>
+                                        <div class="chat-about mb-5">
+                                            <h6 class="m-b-0 fs-5">{{ $complain->message }}
+                                            </h6>
+                                            <small class="italics bg-s"><i
+                                                    class="bi bi-calendar">{{ $complain->updated_at }}</i>
+                                            </small>
+                                        </div>
+                                    @endforeach
+
 
 
                                     {{-- <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info"
@@ -139,7 +157,7 @@
                                     </div> --}}
 
                                     <div class="chat-message clearfix">
-                                        <form action="/cafetaria/post/complain/{{$caf_id}}" method="post">
+                                        <form action="/cafetaria/post/complain/{{ $caf_id }}" method="post">
                                             @csrf
                                             <div class="input-group mb-0">
                                                 <input type="text" name="message" class="form-control"
@@ -296,18 +314,20 @@
         font-weight: bolder;
     }
 
-    #complain, #commend{
+    #complain,
+    #commend {
         text-decoration: none;
         color: black
-        
     }
 
-    #complain:hover, #commend:hover{
+    #complain:hover,
+    #commend:hover {
         font-style: italic;
         font-weight: bolder
     }
 
-    #commend:active, #complain:active{
+    #commend:active,
+    #complain:active {
         color: green;
     }
 </style>

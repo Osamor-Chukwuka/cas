@@ -13,14 +13,16 @@ class CafetariaController extends Controller
     //
     public function index(Request $request){
         $caf_id =  $request->segment(2);
+        $caf_name = Cafetaria::select('*')->where('id', $caf_id)->get();
 
         $complains = Complain::select('*')->where('cafetaria_id', $caf_id)->get();
         $commendations = Commend::select('*')->where('cafetaria_id', $caf_id)->get();
-        echo $complains;
+        // echo ;
         return view('cafetaria', [
             'caf_id' => $caf_id,
             'complains' => $complains,
-            'commendations' => $complains
+            'commendations' => $commendations,
+            'caf_name' => $caf_name
         ]);
     }
 
