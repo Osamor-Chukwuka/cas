@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Cafetaria;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,14 +15,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-
+        // Cafetaria seeder
         $resturants = ['Davta', 'ETC', 'Ultimate'];
         foreach($resturants as $resturant){
             Cafetaria::factory()->create([
                 'name' => $resturant
             ]);
         }
-        // \App\Models\User::factory(10)->create();
+
+        // User seeder
+        $passwords = ['Davta123', 'ETC123', 'Ultmiate123'];
+        $name = ['Davta', 'ETC', 'Ultmiate'];
+        $emaill = ['davta@gmail.com', 'etc@gmail.com', 'ultmiate@gmail.com'];
+        for($i = 0; $i<=3; $i++){
+            User::factory()->create([
+                'name' => $name[$i],
+                'email' => $emaill[$i],
+                'password' => $passwords[$i]
+            ]);
+        }
         
 
         // \App\Models\User::factory()->create([
