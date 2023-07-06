@@ -6,7 +6,7 @@
             <img style="width: 100%;  height: 90vh; opacity: 0.6; filter: brightness(30%)"
                 src="https://media.istockphoto.com/id/1169414361/photo/regional-african-food.jpg?s=612x612&w=0&k=20&c=ulfKENptsq0Fv0iA0OVPs37ZlLT24LsBmPjVse1KBzs="
                 class="img-fluid bg-gradient" alt="...">
-            <figcaption class="display-2 caption fw-bold " id="caption">{{$caf_name[0]->name}}</figcaption>
+            <figcaption class="display-2 caption fw-bold " id="caption">{{ $caf_name[0]->name }}</figcaption>
 
         </figure>
     </div>
@@ -52,11 +52,30 @@
                                                 class="ms-2 h5 text-black bolder fw-5">{{ $user2[0]->name }}</span>
                                         </a>
                                         <div class="chat-about mb-5">
-                                            <h6 class="m-b-0 fs-5">{{$commend->message}}
+                                            <h6 class="m-b-0 fs-5">{{ $commend->message }}
                                             </h6>
-                                            <small class="italics bg-s"><i class="bi bi-calendar">{{ $commend->updated_at }}</i>
+                                            <small class="italics bg-s"><i
+                                                    class="bi bi-calendar">{{ $commend->updated_at }}</i>
                                             </small>
-                                            <div><button type="button" class="btn btn-light">Reply</button></div>
+                                            <div><button onclick="showReply()" type="button"
+                                                class="btn btn-light">Reply</button>
+                                            </div>
+                                            <div class="chat-message clearfix">
+                                                <form action="/reply/{{ $caf_id }}" method="post">
+                                                    @csrf
+                                                    <div class="input-group mb-0">
+                                                        <input type="text" name="message" class="form-control"
+                                                            placeholder="Enter text here...">
+                                                        <div class="input-group-prepend">
+                                                            <button type="submit" class="border-0">
+                                                                <span class="input-group-text"><i
+                                                                        class="bi bi-send-fill"></i></span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+
+                                            </div>
                                         </div>
                                     @endforeach
 
@@ -241,6 +260,11 @@
             const commend = document.getElementById('commend_body').style.display = 'none';
             const complain = document.getElementById('complain_body').style.display = "none";
             const deliver = document.getElementById('deliver_body').style.display = "block";
+        }
+
+        // Function to show reply field
+        function showReply() {
+
         }
 
 
