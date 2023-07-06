@@ -56,6 +56,7 @@
                                             </h6>
                                             <small class="italics bg-s"><i class="bi bi-calendar">{{ $commend->updated_at }}</i>
                                             </small>
+                                            <div><button type="button" class="btn btn-light">Reply</button></div>
                                         </div>
                                     @endforeach
 

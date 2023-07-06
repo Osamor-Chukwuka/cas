@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         $passwords = ['Davta123', 'ETC123', 'Ultmiate123'];
         $name = ['Davta', 'ETC', 'Ultmiate'];
         $emaill = ['davta@gmail.com', 'etc@gmail.com', 'ultmiate@gmail.com'];
-        for($i = 0; $i<=3; $i++){
+        for($i = 0; $i<=2; $i++){
             User::factory()->create([
                 'name' => $name[$i],
                 'email' => $emaill[$i],
