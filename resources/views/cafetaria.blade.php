@@ -57,15 +57,12 @@
                                             <small class="italics bg-s"><i
                                                     class="bi bi-calendar">{{ $commend->updated_at }}</i>
                                             </small>
-                                            <div><button onclick="showReply()" type="button"
-                                                class="btn btn-light">Reply</button>
-                                            </div>
-                                            <div class="chat-message clearfix">
-                                                <form action="/reply/{{ $caf_id }}" method="post">
+                                            <div style="display: flex" class="chat-message clearfix" id="reply_f">
+                                                <form action="/reply/{{ $commend->id }}" method="post">
                                                     @csrf
                                                     <div class="input-group mb-0">
                                                         <input type="text" name="message" class="form-control"
-                                                            placeholder="Enter text here...">
+                                                            placeholder="Reply">
                                                         <div class="input-group-prepend">
                                                             <button type="submit" class="border-0">
                                                                 <span class="input-group-text"><i
@@ -244,6 +241,8 @@
 
 
     <script>
+        let reply_f = document.getElementById().style.display = "flex";
+
         function commend() {
             const commend = document.getElementById('commend_body').style.display = 'block';
             const complain = document.getElementById('complain_body').style.display = "none";
@@ -262,10 +261,7 @@
             const deliver = document.getElementById('deliver_body').style.display = "block";
         }
 
-        // Function to show reply field
-        function showReply() {
 
-        }
 
 
         // HANDLE THE COUNT DOWN

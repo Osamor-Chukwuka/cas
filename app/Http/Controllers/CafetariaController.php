@@ -52,4 +52,10 @@ class CafetariaController extends Controller
         Complain::create($form);
         return back();
     }
+
+
+    // method to handle replies
+    public function reply(Request $request){
+        echo $request;
+    }
 }
