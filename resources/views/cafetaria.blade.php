@@ -58,7 +58,7 @@
                                                     class="bi bi-calendar">{{ $commend->updated_at }}</i>
                                             </small>
                                             <div style="display: flex" class="chat-message clearfix" id="reply_f">
-                                                <form action="/reply/{{ $commend->id }}" method="post">
+                                                <form action="/reply/commend/{{ $commend->id }}" method="post">
                                                     @csrf
                                                     <div class="input-group mb-0">
                                                         <input type="text" name="reply" class="form-control"
@@ -157,7 +157,7 @@
                                                     class="bi bi-calendar">{{ $complain->updated_at }}</i>
                                             </small>
                                             <div style="display: flex" class="chat-message clearfix" id="reply_f">
-                                                <form action="/reply/{{ $complain->id }}" method="post">
+                                                <form action="/reply/complain/{{ $complain->id }}" method="post">
                                                     @csrf
                                                     <div class="input-group mb-0">
                                                         <input type="text" name="reply" class="form-control"

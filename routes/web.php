@@ -33,7 +33,7 @@ Route::post('/cafetaria/post/commend/{caf_id}', [CafetariaController::class, 'se
 Route::post('/cafetaria/post/complain/{caf_id}', [CafetariaController::class, 'sendComplainMessage'])->name('post_message');
 
 // Route to handle commend replies
-Route::post('/reply/{commend_id}', [CafetariaController::class, 'commendReply']);
+Route::post('/reply/commend/{commend_id}', [CafetariaController::class, 'commendReply']);
 
 // Route to handle complain replies
-Route::post('/reply/{complain_id}', [CafetariaController::class, 'complainReply']);
+Route::post('/reply/complain/{complain_id}', [CafetariaController::class, 'complainReply']);
