@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('complainreply', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('message_id')->references('id')->on('complain');
+            $table->string('reply');
             $table->timestamps();
         });
     }

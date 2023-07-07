@@ -19,4 +19,8 @@ class Complain extends Model
     public function cafetarias(){
         return $this->belongsTo(Cafetaria::class);
     }
+
+    public function complainreplys(){
+        return $this->hasMany(Commendreply::class);
+    }
 }

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('commendreply', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('message_id')->references('id')->on('complain');
+            $table->bigInteger('message_id')->references('id')->on('commend');
             $table->string('reply');
             $table->timestamps();
         });
