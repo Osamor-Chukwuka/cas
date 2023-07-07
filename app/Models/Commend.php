@@ -19,4 +19,8 @@ class Commend extends Model
     public function cafetarias(){
         return $this->belongsTo(Cafetaria::class);
     }
+
+    public function commendreplys(){
+        return $this->hasMany(Commendreply::class);
+    }
 }

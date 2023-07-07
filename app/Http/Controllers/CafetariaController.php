@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cafetaria;
 use App\Models\Commend;
+use App\Models\Commendreply;
 use App\Models\Complain;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -54,8 +55,28 @@ class CafetariaController extends Controller
     }
 
 
-    // method to handle replies
-    public function reply(Request $request){
-        echo $request;
+    // method to handle commend replies
+    public function commendReply(Request $request){
+        $form = $request->validate([
+            'reply' => 'required',
+        ]);
+
+        $form['message_id'] = $request->segment(2);
+
+        Commendreply::create($form);
+        return back();
+    }
+
+
+    // method to handle complain replies
+    public function complainReply(Request $request){
+        $form = $request->validate([
+            'reply' => 'required',
+        ]);
+
+        $form['message_id'] = $request->segment(2);
+
+        Commendreply::create($form);
+        return back();
     }
 }

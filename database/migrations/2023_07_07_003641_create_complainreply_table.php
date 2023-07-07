@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('commendreply', function (Blueprint $table) {
+        Schema::create('complainreply', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('message_id')->references('id')->on('complain');
-            $table->string('reply');
             $table->timestamps();
         });
     }
@@ -24,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('commendreply');
+        Schema::dropIfExists('complainreply');
     }
 };

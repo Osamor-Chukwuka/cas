@@ -61,7 +61,7 @@
                                                 <form action="/reply/{{ $commend->id }}" method="post">
                                                     @csrf
                                                     <div class="input-group mb-0">
-                                                        <input type="text" name="message" class="form-control"
+                                                        <input type="text" name="reply" class="form-control"
                                                             placeholder="Reply">
                                                         <div class="input-group-prepend">
                                                             <button type="submit" class="border-0">
@@ -156,6 +156,22 @@
                                             <small class="italics bg-s"><i
                                                     class="bi bi-calendar">{{ $complain->updated_at }}</i>
                                             </small>
+                                            <div style="display: flex" class="chat-message clearfix" id="reply_f">
+                                                <form action="/reply/{{ $complain->id }}" method="post">
+                                                    @csrf
+                                                    <div class="input-group mb-0">
+                                                        <input type="text" name="reply" class="form-control"
+                                                            placeholder="Reply">
+                                                        <div class="input-group-prepend">
+                                                            <button type="submit" class="border-0">
+                                                                <span class="input-group-text"><i
+                                                                        class="bi bi-send-fill"></i></span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+
+                                            </div>
                                         </div>
                                     @endforeach
 
