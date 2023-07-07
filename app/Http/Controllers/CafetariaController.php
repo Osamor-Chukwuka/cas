@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Auth;
 class CafetariaController extends Controller
 {
     //
-    public function index(Request $request){
+    public function index(Request $request)
+    {
         $caf_id =  $request->segment(2);
         $caf_name = Cafetaria::select('*')->where('id', $caf_id)->get();
 
@@ -29,35 +30,38 @@ class CafetariaController extends Controller
     }
 
     // method to handle posting commend messages
-    public function sendCommendMessage(Request $request){
+    public function sendCommendMessage(Request $request)
+    {
         $form = $request->validate([
             'message' => 'required',
         ]);
 
         $form['user_id'] = Auth::user()->id;
         $form['cafetaria_id'] = $request->segment(4);
-        
+
         Commend::create($form);
         return back();
     }
 
 
     // method to handle posting complain messages
-    public function sendComplainMessage(Request $request){
+    public function sendComplainMessage(Request $request)
+    {
         $form = $request->validate([
             'message' => 'required',
         ]);
 
         $form['user_id'] = Auth::user()->id;
         $form['cafetaria_id'] = $request->segment(4);
-        
+
         Complain::create($form);
         return back();
     }
 
 
     // method to handle commend replies
-    public function commendReply(Request $request){
+    public function commendReply(Request $request)
+    {
         $form = $request->validate([
             'reply' => 'required',
         ]);
@@ -70,7 +74,8 @@ class CafetariaController extends Controller
 
 
     // method to handle complain replies
-    public function complainReply(Request $request){
+    public function complainReply(Request $request)
+    {
         $form = $request->validate([
             'reply' => 'required',
         ]);
