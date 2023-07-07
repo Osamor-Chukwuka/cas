@@ -21,6 +21,6 @@ class Complain extends Model
     }
 
     public function complainreplys(){
-        return $this->hasMany(Commendreply::class);
+        return $this->hasMany(Complainreply::class);
     }
 }
