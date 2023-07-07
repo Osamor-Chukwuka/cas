@@ -6,6 +6,7 @@ use App\Models\Cafetaria;
 use App\Models\Commend;
 use App\Models\Commendreply;
 use App\Models\Complain;
+use App\Models\Complainreply;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -76,7 +77,7 @@ class CafetariaController extends Controller
 
         $form['message_id'] = $request->segment(2);
 
-        Commendreply::create($form);
+        Complainreply::create($form);
         return back();
     }
 }
