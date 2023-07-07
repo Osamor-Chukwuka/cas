@@ -62,7 +62,7 @@ class CafetariaController extends Controller
             'reply' => 'required',
         ]);
 
-        $form['message_id'] = $request->segment(2);
+        $form['message_id'] = $request->segment(3);
 
         Commendreply::create($form);
         return back();
@@ -75,7 +75,7 @@ class CafetariaController extends Controller
             'reply' => 'required',
         ]);
 
-        $form['message_id'] = $request->segment(2);
+        $form['message_id'] = $request->segment(3);
 
         Complainreply::create($form);
         return back();
