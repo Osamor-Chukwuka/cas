@@ -18,14 +18,21 @@ class CafetariaController extends Controller
         $caf_id =  $request->segment(2);
         $caf_name = Cafetaria::select('*')->where('id', $caf_id)->get();
 
+        // Get complains and commendations
         $complains = Complain::select('*')->where('cafetaria_id', $caf_id)->get();
         $commendations = Commend::select('*')->where('cafetaria_id', $caf_id)->get();
+
+        // Get replies for complains and commendations
+        $complains_replies = Complainreply::select('*')->get();
+        $commendations_replies = Commendreply::select('*')->get();
         // echo ;
         return view('cafetaria', [
             'caf_id' => $caf_id,
             'complains' => $complains,
             'commendations' => $commendations,
-            'caf_name' => $caf_name
+            'caf_name' => $caf_name,
+            'complains_replies' => $complains_replies,
+            'commendations_replies' => $commendations_replies
         ]);
     }
 

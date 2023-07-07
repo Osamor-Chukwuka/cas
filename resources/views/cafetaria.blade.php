@@ -57,6 +57,7 @@
                                             <small class="italics bg-s"><i
                                                     class="bi bi-calendar">{{ $commend->updated_at }}</i>
                                             </small>
+
                                             <div style="display: flex" class="chat-message clearfix" id="reply_f">
                                                 <form action="/reply/commend/{{ $commend->id }}" method="post">
                                                     @csrf
@@ -73,6 +74,28 @@
                                                 </form>
 
                                             </div>
+
+                                            @foreach ($commendations_replies as $commendation_reply)
+                                                @if ($commendation_reply->message_id == $commend->id)
+                                                    <div class="mt-0 container ms-5">
+                                                        <a href="javascript:void(0);" data-toggle="modal"
+                                                            data-target="#view_info" class="user_name">
+                                                            <img src="https://media.istockphoto.com/id/1169414361/photo/regional-african-food.jpg?s=612x612&w=0&k=20&c=ulfKENptsq0Fv0iA0OVPs37ZlLT24LsBmPjVse1KBzs="
+                                                                class="img-comment" alt="avatar"> <span
+                                                                class="ms-2 h5 text-black bolder fw-5">{{ $user2[0]->name }}</span>
+                                                        </a>
+                                                        <div class="chat-about mb-5">
+                                                            <h6 class="m-b-0 fs-5">{{ $commendation_reply->reply }}
+                                                            </h6>
+                                                            <small class="italics bg-s"><i
+                                                                    class="bi bi-calendar">{{ $commendation_reply->updated_at }}</i>
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                @else
+                                                @endif
+                                            @endforeach
+
                                         </div>
                                     @endforeach
 
@@ -172,6 +195,27 @@
                                                 </form>
 
                                             </div>
+
+                                            @foreach ($complains_replies as $complain_reply)
+                                                @if ($complain_reply->message_id == $complain->id)
+                                                    <div class="mt-0 container ms-5">
+                                                        <a href="javascript:void(0);" data-toggle="modal"
+                                                            data-target="#view_info" class="user_name">
+                                                            <img src="https://media.istockphoto.com/id/1169414361/photo/regional-african-food.jpg?s=612x612&w=0&k=20&c=ulfKENptsq0Fv0iA0OVPs37ZlLT24LsBmPjVse1KBzs="
+                                                                class="img-comment" alt="avatar"> <span
+                                                                class="ms-2 h5 text-black bolder fw-5">{{ $user2[0]->name }}</span>
+                                                        </a>
+                                                        <div class="chat-about mb-5">
+                                                            <h6 class="m-b-0 fs-5">{{ $complain_reply->reply }}
+                                                            </h6>
+                                                            <small class="italics bg-s"><i
+                                                                    class="bi bi-calendar">{{ $complain_reply->updated_at }}</i>
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                @else
+                                                @endif
+                                            @endforeach
                                         </div>
                                     @endforeach
 
