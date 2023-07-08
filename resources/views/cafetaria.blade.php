@@ -58,6 +58,10 @@
                                                     class="bi bi-calendar">{{ $commend->updated_at }}</i>
                                             </small>
 
+                                            @if (Auth::user()->name == 'D')
+                                            @else
+                                            @endif
+
                                             <div style="display: flex" class="chat-message clearfix" id="reply_f">
                                                 <form action="/reply/commend/{{ $commend->id }}" method="post">
                                                     @csrf
@@ -101,17 +105,7 @@
 
 
 
-                                    {{-- <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info"
-                                        class="user_name">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="img-comment"
-                                            alt="avatar"> <span class="ms-2 h5 text-black bolder fw-5">User 1</span>
-                                    </a>
-                                    <div class="chat-about mb-5">
-                                        <h6 class="m-b-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                            Similique dolores nulla explicabo cumque ipsam veniam eos nesciunt esse magni
-                                            totam iure autem facilis est, repellat velit reiciendis quos vero. Nulla.</h6>
-                                        <small>Last seen: 2 hours ago</small>
-                                    </div> --}}
+                                  
 
                                     <div class="chat-message clearfix">
                                         <form action="/cafetaria/post/commend/{{ $caf_id }}" method="post">
@@ -221,17 +215,6 @@
 
 
 
-                                    {{-- <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info"
-                                        class="user_name">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="img-comment"
-                                            alt="avatar"> <span class="ms-2 h5 text-black bolder fw-5">User 1</span>
-                                    </a>
-                                    <div class="chat-about mb-5">
-                                        <h6 class="m-b-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                            Similique dolores nulla explicabo cumque ipsam veniam eos nesciunt esse magni
-                                            totam iure autem facilis est, repellat velit reiciendis quos vero. Nulla.</h6>
-                                        <small>Last seen: 2 hours ago</small>
-                                    </div> --}}
 
                                     <div class="chat-message clearfix">
                                         <form action="/cafetaria/post/complain/{{ $caf_id }}" method="post">
@@ -260,7 +243,6 @@
 
 
 
-        {{-- <h1 id="deliver_body" style="display: none">deliver the caf</h1> --}}
 
 
 
@@ -301,26 +283,21 @@
 
 
     <script>
-        let reply_f = document.getElementById().style.display = "flex";
+        // let reply_f = document.getElementById().style.display = "flex";
 
         function commend() {
             const commend = document.getElementById('commend_body').style.display = 'block';
             const complain = document.getElementById('complain_body').style.display = "none";
-            const deliver = document.getElementById('deliver_body').style.display = "none";
+          
         }
 
         function complain() {
             const commend = document.getElementById('commend_body').style.display = 'none';
             const complain = document.getElementById('complain_body').style.display = "block";
-            const deliver = document.getElementById('deliver_body').style.display = "none";
+           
         }
 
-        function deliver() {
-            const commend = document.getElementById('commend_body').style.display = 'none';
-            const complain = document.getElementById('complain_body').style.display = "none";
-            const deliver = document.getElementById('deliver_body').style.display = "block";
-        }
-
+    
 
 
 
