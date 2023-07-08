@@ -58,26 +58,27 @@
                                                     class="bi bi-calendar">{{ $commend->updated_at }}</i>
                                             </small>
 
-                                            @if (Auth::user()->name == 'D')
+                                            @if (Auth::user()->name == $caf_name[0]->name)
+                                                <div style="display: flex" class="chat-message clearfix" id="reply_f">
+                                                    <form action="/reply/commend/{{ $commend->id }}" method="post">
+                                                        @csrf
+                                                        <div class="input-group mb-0">
+                                                            <input type="text" name="reply" class="form-control"
+                                                                placeholder="Reply">
+                                                            <div class="input-group-prepend">
+                                                                <button type="submit" class="border-0">
+                                                                    <span class="input-group-text"><i
+                                                                            class="bi bi-send-fill"></i></span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+
+                                                </div>
                                             @else
                                             @endif
 
-                                            <div style="display: flex" class="chat-message clearfix" id="reply_f">
-                                                <form action="/reply/commend/{{ $commend->id }}" method="post">
-                                                    @csrf
-                                                    <div class="input-group mb-0">
-                                                        <input type="text" name="reply" class="form-control"
-                                                            placeholder="Reply">
-                                                        <div class="input-group-prepend">
-                                                            <button type="submit" class="border-0">
-                                                                <span class="input-group-text"><i
-                                                                        class="bi bi-send-fill"></i></span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </form>
 
-                                            </div>
 
                                             @foreach ($commendations_replies as $commendation_reply)
                                                 @if ($commendation_reply->message_id == $commend->id)
@@ -105,7 +106,7 @@
 
 
 
-                                  
+
 
                                     <div class="chat-message clearfix">
                                         <form action="/cafetaria/post/commend/{{ $caf_id }}" method="post">
@@ -288,16 +289,16 @@
         function commend() {
             const commend = document.getElementById('commend_body').style.display = 'block';
             const complain = document.getElementById('complain_body').style.display = "none";
-          
+
         }
 
         function complain() {
             const commend = document.getElementById('commend_body').style.display = 'none';
             const complain = document.getElementById('complain_body').style.display = "block";
-           
+
         }
 
-    
+
 
 
 
