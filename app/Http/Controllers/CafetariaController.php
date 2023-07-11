@@ -8,6 +8,7 @@ use App\Models\Commendreply;
 use App\Models\Complain;
 use App\Models\Complainreply;
 use App\Models\Rate;
+use App\Models\Winner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -133,7 +134,7 @@ class CafetariaController extends Controller
         foreach ($davta as $t_davta) {
             $total_davta += $t_davta->total;
         }
-        // echo $total_davta;
+        
 
 
         // ETC
@@ -142,20 +143,35 @@ class CafetariaController extends Controller
         foreach ($etc as $t_etc) {
             $total_etc += $t_etc->total;
         }
-        // echo $total_etc;
 
 
         // ULTIMATE
-        $ultimate = Rate::select('total')->where('cafetaria_id',3)->get();
+        $ultimate = Rate::select('total')->where('cafetaria_id', 3)->get();
         $total_ultimate = 0;
         foreach ($ultimate as $t_ultimate) {
             $total_ultimate += $t_ultimate->total;
         }
-        // echo $total_ultimate;
 
+        // find the max
         $loved_caf = max($total_davta, $total_etc, $total_ultimate);
-        echo $loved_caf;
 
-        // return back();
+        // push to the DB depending on the max
+        if ($loved_caf == $total_etc) {
+            Winner::create([
+                'winner' => 'Davta',
+                'votes' => $total_davta
+            ]);
+        } else if ($loved_caf == $total_etc) {
+            Winner::create([
+                'winner' => 'ETC',
+                'votes' => $total_etc
+            ]);
+        } else {
+            Winner::create([
+                'winner' => 'Ultimate',
+                'votes' => $total_ultimate
+            ]);
+        }
+        return back();
     }
 }
