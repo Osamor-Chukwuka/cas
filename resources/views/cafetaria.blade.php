@@ -484,7 +484,7 @@
                                 <button type="submit" class="btn btn-warning">Submit</button>
                             </div>
 
-                            <input type="hidden" value="{{$caf_id}}" name="caf_id">
+                            <input type="hidden" value="{{$caf_id}}" name="cafetaria_id">
 
                         </form>
                     </div>

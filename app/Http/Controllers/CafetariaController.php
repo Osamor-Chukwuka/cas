@@ -14,6 +14,16 @@ use Illuminate\Support\Facades\Auth;
 class CafetariaController extends Controller
 {
     //
+
+    public function welcome()
+    {
+        $current_caf = Cafetaria::select('*')->get();
+        // echo($current_caf);
+        return view('welcome', [
+            'cafetarias' => $current_caf
+        ]);
+    }
+
     public function index(Request $request)
     {
         $caf_id =  $request->segment(2);
@@ -96,7 +106,8 @@ class CafetariaController extends Controller
 
 
     // Method to handle rating
-    public function rate(Request $request){
+    public function rate(Request $request)
+    {
         $form = $request->validate([
             'question1' => 'required',
             'question2' => 'required',
@@ -105,14 +116,14 @@ class CafetariaController extends Controller
             'question5' => 'required',
             'question6' => 'required',
             'question7' => 'required',
-            'caf_id' => 'required',
+            'cafetaria_id' => 'required',
         ]);
 
-        $form['total'] = $request->question1 + $request->question2 + $request->question3 + $request->question4 + 
-        $request->question5 + $request->question6 + $request->question7;
-        
+        $form['total'] = $request->question1 + $request->question2 + $request->question3 + $request->question4 +
+            $request->question5 + $request->question6 + $request->question7;
+
         $form['user_id'] = Auth::user()->id;
-        
+
         Rate::create($form);
         return back();
     }

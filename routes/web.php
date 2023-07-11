@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\CafetariaController::class, 'welcome'])->name('welcome');
 
 Auth::routes();
 

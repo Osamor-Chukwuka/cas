@@ -45,19 +45,19 @@
         <h2 class="text-center mb-4 fw-bolder" id="caf">Cafetarias</h2>
 
         @foreach ($cafetarias as $cafetaria)
-            <div class="card col-6" style="width: 28rem;">
+            <div class="card col-6 mb-3" style="width: 28rem;">
                 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="https://media.istockphoto.com/id/491090528/photo/cooked-rice.jpg?s=170667a&w=0&k=20&c=YkY-NcuHR870eJS1azbozRxowiUZQsbliIF9p2vX59M="
+                            <img src="{{ asset('storage/images/cafetarias/' . $cafetaria->name . '.jpg') }}"
                                 class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="https://media.istockphoto.com/id/491090528/photo/cooked-rice.jpg?s=170667a&w=0&k=20&c=YkY-NcuHR870eJS1azbozRxowiUZQsbliIF9p2vX59M="
+                            <img src="{{ asset('storage/images/cafetarias/' . $cafetaria->name . '.jpg') }}"
                                 class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="https://media.istockphoto.com/id/491090528/photo/cooked-rice.jpg?s=170667a&w=0&k=20&c=YkY-NcuHR870eJS1azbozRxowiUZQsbliIF9p2vX59M="
+                            <img src="{{ asset('storage/images/cafetarias/' . $cafetaria->name . '.jpg') }}"
                                 class="d-block w-100" alt="...">
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                         content.</p>
                     @php
                     @endphp
-                    <a href="cafetarias/{{$cafetaria->id}}" class="btn btn-primary">Go somewhere</a>
+                    <a href="cafetarias/{{$cafetaria->id}}" class="btn btn-primary">Go to {{ $cafetaria->name }}</a>
                 </div>
             </div>
         @endforeach
