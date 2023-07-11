@@ -106,5 +106,10 @@ class CafetariaController extends Controller
             'question7' => 'required',
             'caf_id' => 'required',
         ]);
+
+        $form['total'] = $request->question1 + $request->question2 + $request->question3 + $request->question4 + 
+        $request->question5 + $request->question6 + $request->question7;
+        
+        echo $form['total'];
     }
 }
