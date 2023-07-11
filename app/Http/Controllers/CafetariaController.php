@@ -125,6 +125,37 @@ class CafetariaController extends Controller
         $form['user_id'] = Auth::user()->id;
 
         Rate::create($form);
-        return back();
+
+        // CALCULATE MOST LOVED CAF
+        // DAVTA
+        $davta = Rate::select('total')->where('cafetaria_id', 1)->get();
+        $total_davta = 0;
+        foreach ($davta as $t_davta) {
+            $total_davta += $t_davta->total;
+        }
+        // echo $total_davta;
+
+
+        // ETC
+        $etc = Rate::select('total')->where('cafetaria_id', 2)->get();
+        $total_etc = 0;
+        foreach ($etc as $t_etc) {
+            $total_etc += $t_etc->total;
+        }
+        // echo $total_etc;
+
+
+        // ULTIMATE
+        $ultimate = Rate::select('total')->where('cafetaria_id',3)->get();
+        $total_ultimate = 0;
+        foreach ($ultimate as $t_ultimate) {
+            $total_ultimate += $t_ultimate->total;
+        }
+        // echo $total_ultimate;
+
+        $loved_caf = max($total_davta, $total_etc, $total_ultimate);
+        echo $loved_caf;
+
+        // return back();
     }
 }
