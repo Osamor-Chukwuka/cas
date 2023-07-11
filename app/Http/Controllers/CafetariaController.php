@@ -7,6 +7,7 @@ use App\Models\Commend;
 use App\Models\Commendreply;
 use App\Models\Complain;
 use App\Models\Complainreply;
+use App\Models\Rate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -110,6 +111,9 @@ class CafetariaController extends Controller
         $form['total'] = $request->question1 + $request->question2 + $request->question3 + $request->question4 + 
         $request->question5 + $request->question6 + $request->question7;
         
-        echo $form['total'];
+        $form['user_id'] = Auth::user()->id;
+        
+        Rate::create($form);
+        return back();
     }
 }
