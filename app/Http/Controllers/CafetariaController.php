@@ -92,4 +92,19 @@ class CafetariaController extends Controller
         Complainreply::create($form);
         return back();
     }
+
+
+    // Method to handle rating
+    public function rate(Request $request){
+        $form = $request->validate([
+            'question1' => 'required',
+            'question2' => 'required',
+            'question3' => 'required',
+            'question4' => 'required',
+            'question5' => 'required',
+            'question6' => 'required',
+            'question7' => 'required',
+            'caf_id' => 'required',
+        ]);
+    }
 }

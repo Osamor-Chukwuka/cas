@@ -253,23 +253,247 @@
     {{-- RATE THE CAF --}}
     <div class="mb-4">
         <figure>
-            <img style="width: 100%;  height: 100vh; opacity: 1; filter: brightness(15%)"
+            <img style="width: 100%;  height: 110vh; opacity: 1; filter: brightness(15%)"
                 src="https://media.istockphoto.com/id/1169414361/photo/regional-african-food.jpg?s=612x612&w=0&k=20&c=ulfKENptsq0Fv0iA0OVPs37ZlLT24LsBmPjVse1KBzs="
                 class="img-fluid bg-gradient" alt="...">
             <figcaption class=" caption2 fw-bold text-center " id="caption">
                 <p class="display-4">Rate this Cafetaria</p>
-                <div class="display-3">
-                    <i class="bi bi-star-fill text-warning "></i>
+                <div class="">
+                    {{-- <i class="bi bi-star-fill text-warning "></i>
                     <i class="bi bi-star-fill text-warning"></i>
                     <i class="bi bi-star-fill text-warning"></i>
                     <i class="bi bi-star-half text-warning"></i>
-                    <i class="bi bi-star"></i>
+                    <i class="bi bi-star"></i> --}}
+
+                    <div class="container border border-1 pb-5 text-center">
+
+                        <form id="form" action="{{route('rating')}}" method="post">
+                            @csrf
+                            <div class="question ">
+                                <div class="form-group">
+                                    <div class="mb-5 ">
+                                        <label class="" for="question1">Question 1</label>
+                                        <p>How Fresh is the food</p>
+                                    </div>
+
+                                    <div>
+                                        <input class="form-check-input question1" type="radio" name="question1"
+                                            id="question1" value= 5>
+                                        <label class="form-check-label" for="question1">
+                                            Fresh
+                                        </label>
+
+                                        <input class="form-check-input ms-3" type="radio" name="question1"
+                                            id="question1a" checked value= 3>
+                                        <label class="form-check-label" for="question1a">
+                                            Very Fresh
+                                        </label>
+
+                                        <input class="form-check-input ms-3" type="radio" name="question1"
+                                            id="question1b" checked value= 0>
+                                        <label class="form-check-label" for="question1b">
+                                            Not Fresh
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="question">
+                                <div class="form-group">
+                                    <div class="mb-5 ">
+                                        <label class="" for="question2">Question 2</label>
+                                        <p>How clean is the environment</p>
+                                    </div>
+
+                                    <div>
+                                        <input class="form-check-input question2" type="radio" name="question2"
+                                            id="question2a" value= 5>
+                                        <label class="form-check-label" for="question2a">
+                                            Very Clean
+                                        </label>
+
+                                        <input class="form-check-input ms-3" type="radio" name="question2"
+                                            id="question2b" checked value= 3>
+                                        <label class="form-check-label" for="question2b">
+                                            Clean
+                                        </label>
+
+                                        <input class="form-check-input ms-3" type="radio" name="question2"
+                                            id="question2c" checked value= 0>
+                                        <label class="form-check-label" for="question2c">
+                                            Not Clean
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="form-group">
+                                    <div class="mb-5 ">
+                                        <label class="" for="question3">Question 3</label>
+                                        <p>How is the Layout and Design of the Cafetaria</p>
+                                    </div>
+
+                                    <div>
+                                        <input class="form-check-input question3" type="radio" name="question3"
+                                            id="question3a" value= 5 >
+                                        <label class="form-check-label" for="question3a">
+                                            Very Good
+                                        </label>
+
+                                        <input class="form-check-input ms-3" type="radio" name="question3"
+                                            id="question3b" checked value= 3>
+                                        <label class="form-check-label" for="question3b">
+                                            good
+                                        </label>
+
+                                        <input class="form-check-input ms-3" type="radio" name="question3"
+                                            id="question3c" checked value= 0>
+                                        <label class="form-check-label" for="question3c">
+                                            Not Good
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                <div class="form-group">
+                                    <div class="mb-5 ">
+                                        <label class="" for="question4">Question 4</label>
+                                        <p>How is the Cooking Environment and Comfort</p>
+                                    </div>
+
+                                    <div>
+                                        <input class="form-check-input question4" type="radio" name="question4"
+                                            id="question4a" value= 5>
+                                        <label class="form-check-label" for="question4a">
+                                            Very Good
+                                        </label>
+
+                                        <input class="form-check-input ms-3" type="radio" name="question4"
+                                            id="question4b" checked value= 3>
+                                        <label class="form-check-label" for="question4b">
+                                            good
+                                        </label>
+
+                                        <input class="form-check-input ms-3" type="radio" name="question4"
+                                            id="question4c" checked value= 0>
+                                        <label class="form-check-label" for="question4c">
+                                            Not Good
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="question">
+                                <div class="form-group">
+                                    <div class="mb-5 ">
+                                        <label class="" for="question1">Question 5</label>
+                                        <p>How is the Neatness of Staffs</p>
+                                    </div>
+
+                                    <div>
+                                        <input class="form-check-input question1" type="radio" name="question5"
+                                            id="question5a" value= 5>
+                                        <label class="form-check-label" for="question5a">
+                                            Very Good
+                                        </label>
+
+                                        <input class="form-check-input ms-3" type="radio" name="question5"
+                                            id="question5b" checked value= 3>
+                                        <label class="form-check-label" for="question5b">
+                                            good
+                                        </label>
+
+                                        <input class="form-check-input ms-3" type="radio" name="question5"
+                                            id="question5c" checked value= 0>
+                                        <label class="form-check-label" for="question5c">
+                                            Not Good
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="question">
+                                <div class="form-group">
+                                    <div class="mb-5 ">
+                                        <label class="" for="question1">Question 6</label>
+                                        <p>How is the Respond time of the Staffs</p>
+                                    </div>
+
+                                    <div>
+                                        <input class="form-check-input question1" type="radio" name="question6"
+                                            id="question6a" value= 5>
+                                        <label class="form-check-label" for="question6a">
+                                            Very Good
+                                        </label>
+
+                                        <input class="form-check-input ms-3" type="radio" name="question6"
+                                            id="question6b" checked value= 3>
+                                        <label class="form-check-label" for="question6b">
+                                            good
+                                        </label>
+
+                                        <input class="form-check-input ms-3" type="radio" name="question6"
+                                            id="question6c" checked value= 0>
+                                        <label class="form-check-label" for="question6c">
+                                            Not Good
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="question">
+                                <div class="form-group">
+                                    <div class="mb-5 ">
+                                        <label class="" for="question1">Question 7</label>
+                                        <p>How affordable is the Food in this Cafetaria</p>
+                                    </div>
+
+                                    <div>
+                                        <input class="form-check-input question1" type="radio" name="question7"
+                                            id="question7a" value= 5>
+                                        <label class="form-check-label" for="question7a">
+                                            Very affordable
+                                        </label>
+
+                                        <input class="form-check-input ms-3" type="radio" name="question7"
+                                            id="question7b" checked value= 3>
+                                        <label class="form-check-label" for="question7b">
+                                            affordable
+                                        </label>
+
+                                        <input class="form-check-input ms-3" type="radio" name="question7"
+                                            id="question7c" checked value= 0>
+                                        <label class="form-check-label" for="question7c">
+                                            Not affordable
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- <div class="question">
+                                <div class="form-group">
+                                    <label for="question4">Question 4:</label>
+                                    <input type="text" class="form-control" id="question4" name="question4">
+                                </div>
+                            </div> --}}
+                            <div class="pt-4">
+                                <button type="button" class="btn btn-warning me-2 " id="previousBtn"
+                                    onclick="previousQuestion()">Previous
+                                </button>
+                                <button type="button" class="btn btn-warning me-2" id="nextBtn"
+                                    onclick="nextQuestion()">Next
+                                </button>
+                                <button type="submit" class="btn btn-warning">Submit</button>
+                            </div>
+
+                            <input type="hidden" value="{{$caf_id}}" name="caf_id">
+
+                        </form>
+                    </div>
                 </div>
-                <div class="text display-5">4.5</div>
-                <div class="mt-5 mb-2">
-                    <i class="bi bi-trophy-fill display-1 text-warning"></i>
-                    <p class="fs-1"> Best Cafetaria of the Year(2023): ETC Cafetaria</p>
-                </div>
+                {{-- <div class="text display-5">4.5</div> --}}
+                <div class="mt-2 mb-2">
+                    <i class="bi bi-trophy-fill display-4 text-warning"></i>
+                    <p class="fs-4"> Best Cafetaria of the Year(2023): ETC Cafetaria</p>
+                </div>  
                 <div class="mt-4">
                     <i class="bi bi-clock-fill display-1 text-warning"></i>
                     <p id="time" class="fs-1"></p>
@@ -331,6 +555,49 @@
                 document.getElementById("expire").innerHTML = "EXPIRED";
             }
         }, 1000);
+
+
+        // Handle the Questions
+        var currentQuestion = 0;
+        var form = document.getElementById("form");
+        var previousBtn = document.getElementById("previousBtn");
+        var nextBtn = document.getElementById("nextBtn");
+        var questions = document.getElementsByClassName("question");
+
+        function showQuestion(questionIndex) {
+            for (var i = 0; i < questions.length; i++) {
+                questions[i].style.display = "none";
+            }
+            questions[questionIndex].style.display = "block";
+
+            // Show or hide buttons based on question index
+            // if (questionIndex === 0) {
+            //     previousBtn.style.display = "none";
+            // } else {
+            //     previousBtn.style.display = "inline-block";
+            // }
+            if (questionIndex === questions.length - 1) {
+                nextBtn.style.display = "none";
+            } else {
+                nextBtn.style.display = "inline-block";
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion(currentQuestion);
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                showQuestion(currentQuestion);
+            }
+        }
+
+        showQuestion(currentQuestion);
     </script>
 @endsection
 
@@ -355,6 +622,7 @@
         position: absolute;
         bottom: 0%;
         left: 0;
+        top: 1%;
         width: 100%;
         /* background-color: rgba(0, 0, 0, 0.2); Adjust the background color and opacity */
         color: #ffffff;

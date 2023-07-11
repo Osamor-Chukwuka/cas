@@ -37,3 +37,6 @@ Route::post('/reply/commend/{commend_id}', [CafetariaController::class, 'commend
 
 // Route to handle complain replies
 Route::post('/reply/complain/{complain_id}', [CafetariaController::class, 'complainReply']);
+
+// Route to handle rating'
+Route::post('/cafetaria/rate', [CafetariaController::class, 'rate'])->name('rating');
