@@ -491,10 +491,11 @@
                 </div>
                 {{-- <div class="text display-5">4.5</div> --}}
                 <div class="mt-2 mb-2">
-                    <i class="bi bi-trophy-fill display-4 text-warning"></i>
-                    <p class="fs-4"> Best Cafetaria of the Year(2023): ETC Cafetaria</p>
+                    <i class="bi bi-trophy-fill display-2 text-warning"></i>
+                    <p class="fs-4"> Best Cafetaria : {{$winner->winner}}</p>
+                    <p class="fs-4">{{$winner->votes}} votes</p>
                 </div>  
-                <div class="mt-4">
+                <div class="mt-2">
                     <i class="bi bi-clock-fill display-1 text-warning"></i>
                     <p id="time" class="fs-1"></p>
                 </div>

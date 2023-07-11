@@ -11,6 +11,7 @@ use App\Models\Rate;
 use App\Models\Winner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CafetariaController extends Controller
 {
@@ -37,14 +38,18 @@ class CafetariaController extends Controller
         // Get replies for complains and commendations
         $complains_replies = Complainreply::select('*')->get();
         $commendations_replies = Commendreply::select('*')->get();
-        // echo ;
+
+        // Get the Winner
+        $winner = Winner::select('*')->get();
+        $winner =  $winner[0];
         return view('cafetaria', [
             'caf_id' => $caf_id,
             'complains' => $complains,
             'commendations' => $commendations,
             'caf_name' => $caf_name,
             'complains_replies' => $complains_replies,
-            'commendations_replies' => $commendations_replies
+            'commendations_replies' => $commendations_replies,
+            'winner' => $winner,
         ]);
     }
 
@@ -134,7 +139,7 @@ class CafetariaController extends Controller
         foreach ($davta as $t_davta) {
             $total_davta += $t_davta->total;
         }
-        
+
 
 
         // ETC
@@ -156,18 +161,18 @@ class CafetariaController extends Controller
         $loved_caf = max($total_davta, $total_etc, $total_ultimate);
 
         // push to the DB depending on the max
-        if ($loved_caf == $total_etc) {
-            Winner::create([
+        if ($loved_caf == $total_davta) {
+            DB::table('winner')->update([
                 'winner' => 'Davta',
                 'votes' => $total_davta
             ]);
         } else if ($loved_caf == $total_etc) {
-            Winner::create([
+            DB::table('winner')->update([
                 'winner' => 'ETC',
                 'votes' => $total_etc
             ]);
         } else {
-            Winner::create([
+            DB::table('winner')->update([
                 'winner' => 'Ultimate',
                 'votes' => $total_ultimate
             ]);

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('winner', function (Blueprint $table) {
             $table->id();
-            $table->string('winner');
-            $table->integer ('votes');
+            $table->string('winner')->default('none');
+            $table->integer ('votes')->default(0);
             $table->timestamps();
         });
     }
