@@ -128,12 +128,33 @@ class CafetariaController extends Controller
             'question4' => 'required',
             'question5' => 'required',
             'question6' => 'required',
-            'question7' => 'required',
+            'question8' => 'required',
+            'question9' => 'required',
+            'question10' => 'required',
+            'question11' => 'required',
+            'question12' => 'required',
+            'question13' => 'required',
+            'question14' => 'required',
+            'question15' => 'required',
+            'question16' => 'required',
             'cafetaria_id' => 'required',
         ]);
 
-        $form['total'] = $request->question1 + $request->question2 + $request->question3 + $request->question4 +
-            $request->question5 + $request->question6 + $request->question7;
+       
+
+        $food_quality = $request->question1 + $request->question2 + $request->question3 + $request->question4;
+        $physical_environment = $request->question5 + $request->question6 + $request->question8;
+        $customer_service = $request->question10 + $request->question11 + $request->question12 + $request->question13;
+        $pricing  = $request->question14 + $request->question15 + $request->question16;
+        $total = $food_quality + $physical_environment+ $customer_service+ $pricing;
+
+        $form['food_quality'] = $food_quality;
+        $form['physical_environment'] = $physical_environment;
+        $form['customer_service'] = $customer_service;
+        $form['pricing'] = $pricing;
+            
+
+        $form['total'] = $total;
 
         $form['user_id'] = Auth::user()->id;
 

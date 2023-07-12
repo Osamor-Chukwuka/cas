@@ -596,22 +596,54 @@
                                     </div>
 
                                     <div>
-                                        <input class="form-check-input question1" type="radio" name="question7"
-                                            id="question7a" value= 5>
-                                        <label class="form-check-label" for="question7a">
-                                            Very affordable
+                                        <input class="form-check-input question1" type="radio" name="question13"
+                                            id="question13a" value= 5>
+                                        <label class="form-check-label" for="question13a">
+                                            Strongly agree
                                         </label>
 
-                                        <input class="form-check-input ms-3" type="radio" name="question7"
-                                            id="question7b" checked value= 3>
-                                        <label class="form-check-label" for="question7b">
-                                            affordable
+                                        <input class="form-check-input ms-3" type="radio" name="question13"
+                                            id="question13b" checked value= 3>
+                                        <label class="form-check-label" for="question13b">
+                                            Agree
                                         </label>
 
-                                        <input class="form-check-input ms-3" type="radio" name="question7"
-                                            id="question7c" checked value= 0>
-                                        <label class="form-check-label" for="question7c">
-                                            Not affordable
+                                        <input class="form-check-input ms-3" type="radio" name="question13"
+                                            id="question13c" checked value= 0>
+                                        <label class="form-check-label" for="question13c">
+                                            Disagree
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            {{-- MODEL 4 --}}
+                            <div class="question">
+                                <div class="form-group">
+                                    <div class="mb-5 ">
+                                        <label class="" for="question1">Model 4 (pricing)</label>
+                                        <p>The Food are affordable</p>
+                                    </div>
+
+                                    <div>
+                                        <input class="form-check-input question1" type="radio" name="question14"
+                                            id="question14a" value= 5>
+                                        <label class="form-check-label" for="question14a">
+                                            Strongly agree
+                                        </label>
+
+                                        <input class="form-check-input ms-3" type="radio" name="question14"
+                                            id="question14b" checked value= 3>
+                                        <label class="form-check-label" for="question14b">
+                                            Agree
+                                        </label>
+
+                                        <input class="form-check-input ms-3" type="radio" name="question14"
+                                            id="question14c" checked value= 0>
+                                        <label class="form-check-label" for="question14c">
+                                            Disagree
                                         </label>
                                     </div>
                                 </div>
@@ -619,27 +651,27 @@
                             <div class="question">
                                 <div class="form-group">
                                     <div class="mb-5 ">
-                                        <label class="" for="question1">Question 7</label>
-                                        <p>How affordable is the Food in this Cafetaria</p>
+                                        <label class="" for="question1">Model 4 (pricing)</label>
+                                        <p>Good Value for Money</p>
                                     </div>
 
                                     <div>
-                                        <input class="form-check-input question1" type="radio" name="question7"
-                                            id="question7a" value= 5>
-                                        <label class="form-check-label" for="question7a">
-                                            Very affordable
+                                        <input class="form-check-input question1" type="radio" name="question15"
+                                            id="question15a" value= 5>
+                                        <label class="form-check-label" for="question15a">
+                                            Strongly agree
                                         </label>
 
-                                        <input class="form-check-input ms-3" type="radio" name="question7"
-                                            id="question7b" checked value= 3>
-                                        <label class="form-check-label" for="question7b">
-                                            affordable
+                                        <input class="form-check-input ms-3" type="radio" name="question15"
+                                            id="question15b" checked value= 3>
+                                        <label class="form-check-label" for="question15b">
+                                            Agree
                                         </label>
 
-                                        <input class="form-check-input ms-3" type="radio" name="question7"
-                                            id="question7c" checked value= 0>
-                                        <label class="form-check-label" for="question7c">
-                                            Not affordable
+                                        <input class="form-check-input ms-3" type="radio" name="question15"
+                                            id="question15c" checked value= 0>
+                                        <label class="form-check-label" for="question15c">
+                                            Disagree
                                         </label>
                                     </div>
                                 </div>
@@ -647,55 +679,27 @@
                             <div class="question">
                                 <div class="form-group">
                                     <div class="mb-5 ">
-                                        <label class="" for="question1">Question 7</label>
-                                        <p>How affordable is the Food in this Cafetaria</p>
+                                        <label class="" for="question1">Model 4 (pricing)</label>
+                                        <p>Good Pricing Strategy</p>
                                     </div>
 
                                     <div>
-                                        <input class="form-check-input question1" type="radio" name="question7"
-                                            id="question7a" value= 5>
-                                        <label class="form-check-label" for="question7a">
-                                            Very affordable
+                                        <input class="form-check-input question1" type="radio" name="question16"
+                                            id="question16a" value= 5>
+                                        <label class="form-check-label" for="question16a">
+                                            Strongly agree
                                         </label>
 
-                                        <input class="form-check-input ms-3" type="radio" name="question7"
-                                            id="question7b" checked value= 3>
-                                        <label class="form-check-label" for="question7b">
-                                            affordable
+                                        <input class="form-check-input ms-3" type="radio" name="question16"
+                                            id="question16b" checked value= 3>
+                                        <label class="form-check-label" for="question16b">
+                                            Agree
                                         </label>
 
-                                        <input class="form-check-input ms-3" type="radio" name="question7"
-                                            id="question7c" checked value= 0>
-                                        <label class="form-check-label" for="question7c">
-                                            Not affordable
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="question">
-                                <div class="form-group">
-                                    <div class="mb-5 ">
-                                        <label class="" for="question1">Question 7</label>
-                                        <p>How affordable is the Food in this Cafetaria</p>
-                                    </div>
-
-                                    <div>
-                                        <input class="form-check-input question1" type="radio" name="question7"
-                                            id="question7a" value= 5>
-                                        <label class="form-check-label" for="question7a">
-                                            Very affordable
-                                        </label>
-
-                                        <input class="form-check-input ms-3" type="radio" name="question7"
-                                            id="question7b" checked value= 3>
-                                        <label class="form-check-label" for="question7b">
-                                            affordable
-                                        </label>
-
-                                        <input class="form-check-input ms-3" type="radio" name="question7"
-                                            id="question7c" checked value= 0>
-                                        <label class="form-check-label" for="question7c">
-                                            Not affordable
+                                        <input class="form-check-input ms-3" type="radio" name="question16"
+                                            id="question16c" checked value= 0>
+                                        <label class="form-check-label" for="question16c">
+                                            Disagree
                                         </label>
                                     </div>
                                 </div>
