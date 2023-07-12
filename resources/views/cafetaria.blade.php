@@ -272,27 +272,27 @@
                             <div class="question ">
                                 <div class="form-group">
                                     <div class="mb-5 ">
-                                        <label class="" for="question1">Question 1</label>
-                                        <p>How Fresh is the food</p>
+                                        <label class="" for="question1">Model 1 (Food Quality and Product)</label>
+                                        <p>The food has good taste/quality</p>
                                     </div>
 
                                     <div>
                                         <input class="form-check-input question1" type="radio" name="question1"
                                             id="question1" value= 5>
                                         <label class="form-check-label" for="question1">
-                                            Fresh
+                                            Strongly agree
                                         </label>
 
                                         <input class="form-check-input ms-3" type="radio" name="question1"
                                             id="question1a" checked value= 3>
                                         <label class="form-check-label" for="question1a">
-                                            Very Fresh
+                                            Agree
                                         </label>
 
                                         <input class="form-check-input ms-3" type="radio" name="question1"
                                             id="question1b" checked value= 0>
                                         <label class="form-check-label" for="question1b">
-                                            Not Fresh
+                                            Disagree
                                         </label>
                                     </div>
 

@@ -41,7 +41,14 @@ class CafetariaController extends Controller
 
         // Get the Winner
         $winner = Winner::select('*')->get();
-        $winner =  $winner[0];
+        try {
+            $winner =  $winner[0];
+        } catch (\Throwable $th) {
+            Winner::create();
+        }
+        // echo $winner;
+
+
         return view('cafetaria', [
             'caf_id' => $caf_id,
             'complains' => $complains,
